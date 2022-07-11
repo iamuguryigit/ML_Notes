@@ -7,7 +7,8 @@ I will be providing the notes as I get the chance. The main content will be as s
   - Probability Review
 
 Supervised Learning : 
-  
+
+  - Decision Tree Notes + Sample Code
   - Naive Bayes Notes + Sample Code
   - Logistic Regression Notes + Sample Code
   - Support Vector Machines Notes + Sample Code
