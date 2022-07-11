@@ -1,7 +1,7 @@
 # ML_Notes
 Machine Learning Notes will be provided here.
 
-I will be providing the notes as I get the chance. The content will be as shown below.
+I will be providing the notes as I get the chance. The main content will be as shown below and I will provide additional information from time to time.
 
 
   - Probability Review
