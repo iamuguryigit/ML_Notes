@@ -26,3 +26,4 @@ Unsupervised Learning :
   - DBSCAN 
   
 
+Time Series Forecasting and important concepts beside the algorithms will be provided.
