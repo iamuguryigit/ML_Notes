@@ -1,0 +1,75 @@
+Before running into the machine learning models, I will be reviewing some important probability concepts in here.
+
+
+Random Variable : Real valued function defined on a set of possible outcomes i.e. sample space. If discrete then you will have pmf if continues then you have pdf.
+Sample space : The set of all possible outcomes of a random experiment.
+Event : any subset of sample space. throwing a dice and getting 4.
+
+Bernoulli Trial : A trial with a binary outcome. (either 0 or 1)
+Binomial distrubition: P(X ==k) = comb(n k)*teta**k*(1-teta)**(n-k)     meaning number of k successes from n different Bernoulli trials. If n is 1 then it is already a Bernoulli trial.
+
+Multinomial Distribution : k sided dice rolled n times.
+
+Normal Distribution : X is continues and dist is defined by mean and variance.
+
+Variance : o**2 = sum((X-u)**2)/N
+Expected Value : if X is discrete sum(x*p(x))    if continuous : integral(x*p(x))
+
+Covariance : measure of the joint prob of two random variables. It shows how variables vary together.
+ 			# sum((x-E(x))*(y-E(y))) / n
+ 			# if you are good at Math class then are you good at English class also ?
+ 			# It can co-vary in same direction or in opposite directions.
+ 			# If two variables are independent then covariance will be zero. Vice versa may not necessarily be true.
+
+
+Correlation : It is the normalized covariance. COV(X,Y)/(sigmax*sigmay)      Results have to be in [-1,1].
+
+Prior Prob. : prob of event A in the absence of any other information. i.e. you dont have any data and you know that %1 of all emails are spam.
+
+Joint Prob. : Relationship between two or more events. suppose email is spam and containing the word free.   P(x1,x2,x3,...,xn)
+
+Marginalization : Using joint probability to get the just probability of one event. suppose you know the prob of weather is sunny and hot, then trying to find p(sun). Marginalizing over T to get P(W).
+
+Conditional Prob. : P(A|B) = P(A,B) / P(B)
+
+Chain Rule : P(X1,X2,X3,X4,....) = P(X1)*P(X2|X1)*....*P(Xn|X1,X2,....,Xn-1)  
+
+Independence : P(A,B) = P(A) * P(B)
+
+Conditional Independence : P(A,B|C) = P(A|C) * p(B|C)
+
+Bayes Rule : p(A|B) = p(B|A)*p(A)/P(B)                 p(B) = p(B|A)*p(A)  +  p(B|-A)*p(-A)
+
+
+  
+Maximum Likelihood Estimation:
+    
+    For which parameter teta our data is most likely ? 
+    Thumbtack and nail : Flips are independent and identically distributed. 
+    P(Heads) = teta, Choose teta that maximizes the prob of observed data (likelihood of the data). This is MLE.
+    P(Data|teta) = teta**ah*(1-teta)**at            teta = arg max P(D|teta)
+    Take log and derivative and set to 0. tetaMle = ah / (ah+at)
+    The more is merrier.
+
+    If we measure continuous variable, normal distribution, parameters will be mean and variance.
+    Learning parameters for a Gaussian, iid data, learn parameters u and standard deviation o.
+    Take log and derivative set to 0. uMle = sum(xi)/N    o**2mle = sum((xi-u)**2)/N
+
+
+
+Maximum Apriori Probability : 
+    
+    What if we have prior beliefs ? Using data and prior beliefs, trying to do better guess.
+    P(teta|D) = P(D|teta)*p(teta)/p(D)   Bayes theorem
+    posterior = likelihood * prior / Normalization.    Given data, which parameter teta is more likely ?
+    Prior Beliefs distribution + Evidence dist = Posterior Beliefs dist.
+    
+    What is prior ? Expert knowledge - Uniform dist - Population based statistics - Estimated from data
+    
+    If prior is uniform then Map and MLE gives the same result.
+    
+    teta : prob of head. We flipped it 3 times ah = 1 at = 2.  
+    prior knowledge teta can be either 0.3 or 0.6.  prob respectively 0.2 and 0.8.
+    Use bayes theorem and estimate the posterior.
+    Prior and posterior have the same form : Conjugate prior.  If data is sparse, using prior provides a fall back mechanism.
+    If data is abundant, the likelihood will dominate the prior and prior will have less effect on the posterior.
