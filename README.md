@@ -9,6 +9,7 @@ I will be providing the notes as I get the chance. The main content will be as s
   - Feature Selection
   - Imbalanced Data Handling
   - Missing Value Handling (Imputing)
+  - Error Metrics
 
 Supervised Learning : 
 
