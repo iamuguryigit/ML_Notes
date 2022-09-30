@@ -5,6 +5,8 @@ I will be providing the notes as I get the chance. The main content will be as s
 
 
   - Probability Review
+  - EDA 
+  - Feature Selection
 
 Supervised Learning : 
 
